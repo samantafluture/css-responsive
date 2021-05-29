@@ -1,0 +1,124 @@
+==============
+RESPONSIVIDADE
+==============
+
+PREPARAÇÃO
+==========
+- Criar estrutura de pastas e arquivos
+- Separar todas as imagens dentro da pasta de imagens
+- Copiar e colar todos os textos em um arquivo (textos.txt)
+- Copiar e colar todos os códigos de cores em um arquivo (cores.txt)
+- Estrutura HTML baseada no Figma
+- Separar as fontes utilizadas a partir do Figma no Google Fonts
+- Colar o link das fontes no HTML abaixo do <title>
+- Limpar área de trabalho do css inserindo o reset.css no HTML
+
+MEDIDAS
+=======
+
+# em
+- em = efemeral
+- unidade de medida relativa ao font-size da tag mãe ao qual estamos aplicando
+- ou seja, a base é a font-size do elemento mãe ao que vc está estilizando
+-> vantagens
+    . pode controlar casos isolados em vez de aplicar para toda a página
+    . exemplo: usar em em um bloco somente que precise
+
+# rem
+- rem = root efemeral
+- unidade de medida relativa ao font-size da tag html, elemento raiz, mãe de todas
+- fonte padrão do navegador = 16px
+- então normalmente esta vai ser a base
+-> vantagens
+    . cada borwser tem tamanho de fonte padrão diferente
+    . então usando rem seu design vai se adaptar a qualquer um
+
+# vw
+- vw = viewport width
+- o quanto vc quer que tal elemente ocupe de largura da tela 
+
+# vh
+- vh = viewport height
+- o quanto vc quer que tal elemento ocupe de altura da tela
+
+TIPOS DE IMAGENS 
+================
+
+# png
+- pouco compacto
+- mantém qualidade
+-> indicação: quando necessitar de transparência
+
+# jpg
+- mais compacto
+- não tem transparência
+- mais leve
+- não tanta qualidade
+-> indicação: uso geral
+
+# gif
+- qualidade baixa
+
+# svg
+- imagens criadas a partir de instruções / cálculos
+- guarda cálculos e não posições dos pixels
+- peso muito mais leve que png
+- não dá pixelização
+- pode dar zoom quanto quiser
+- guarda menos informação, cores mais chapadas
+-> indição: ícones, logos e ilustrações simples
+
+MOBILE FIRST
+============
+
+- quando evolui para desktop, seu uso continua totalmente funcional
+
+# <meta> viewport
+- primeiro passo para responsividade
+- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+- sempre incluir no header do HTML
+- faz conversão dos pixels para um dispositivo móvel, que pode variar
+- initial-scale diz o quanto de zoom para o padrão vai ser aplicado
+    . ao diminuir, vamos enxergar menos coisa, dando zoom somente naquilo que podemos ver
+    . quando abaixo, vai ficando mais parecido com desktop
+    . deixa 1.0 para sempre ficar relacionado ao tamanho do dispositivo 
+- viewport = tela do navegador, o que está visível
+
+VARIAVEIS CSS
+=============
+
+- pegar as cores (e outros estilos ex font-family que se aplicam a tudo) 
+- criar variáveis com elas
+- sintaxe:
+    --nome-da-variavel: valor;
+    exemplo: --bg-rodape: #FFF;
+    exemplo: --cinza-claro: #ccc;
+- colocar estas variáveis dentro do :root {} acima de tudo na base.css
+- o :root seleciona todas as tags html, é mais forte do que apenas html
+- :root tem especificidade maior, não correndo o risco de ser sobreescrito
+- aplicação: 
+    var(--nome-da-variavel)
+    exemplo: border-color: var(--cinza-escuro);
+- vantagens 
+    . manutenção mais fácil
+    . posso trocar tudo de uma vez só 
+    . maior controle 
+
+MEDIA QUERIES
+=============
+
+# min-width
+- significa "a partir de"
+
+# screen and
+- screen = tela
+- condição para dispositivos com tela
+- tem "print" tb por exemplo
+
+# padrões de tamanhos
+- valor do tablet: min-width: 768px
+- valor do desktop: 1024px
+
+
+
+
